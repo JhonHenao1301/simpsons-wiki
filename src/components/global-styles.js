@@ -10,9 +10,9 @@ const GlobalStylesStyled = createGlobalStyle`
     --yellow-10: #FFFDE7;
     --yellow-20: #FFF176;
     --yellow-30: #FBC02D;
-    --body-regular: 100 1rem/1.5rem Kanit;
-    --headline-2: 300 1.25rem/1.5rem Kanit;
-    --headline-1: 400 1.5rem/1.75rem Kanit;
+    --body-regular: 300 1rem/1.5rem Kanit;
+    --headline-2: 400 1.25rem/1.5rem Kanit;
+    --headline-1: 500 1.5rem/1.75rem Kanit;
 
   }
 

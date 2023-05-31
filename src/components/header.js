@@ -1,16 +1,23 @@
 
 import styled from 'styled-components'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 import Search from './search'
 
 const HeaderStyled = styled.header`
-    border: 1px solid red;
-    padding-inline: 2rem;
+
+    .container {
+        max-width: 100%;
+    }
+
     a {
         display: flex;
         align-items: center;
         font: var(--headline-1);
         gap: .5rem;
     }
+    
     a:hover {
         font-size: 1.75rem;
         color: var(--yellow-10);
@@ -22,16 +29,22 @@ const HeaderStyled = styled.header`
 function Header() {
     return (
         <HeaderStyled>
-            <nav className="navbar navbar-expand-lg">
-                <div className="container-fluid d-flex">
-                    <a className="navbar-brand " href="#home">
+            <Navbar bg="light" expand="md">
+                <Container className='container m-0 p-0 px-4'>
+                    <Navbar.Brand href="#home">
                         <img src="/rosquilla.png" alt="Donnut" width={24} height={24} />
                         Simpsons App
-                    </a>
-                    <Search />
-                </div>
-            </nav>
-            
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+                        <Nav className="">
+                            <Nav.Link href="#home">
+                                <Search />
+                            </Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
         </HeaderStyled>
     )
 }

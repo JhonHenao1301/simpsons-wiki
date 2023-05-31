@@ -7,8 +7,11 @@ const LayoutStyled = styled.div`
     min-block-size: 100vh;
     margin: 0;
     padding-inline: 2rem;
+    margin-block-start: 2rem;
+    margin-block-end: 1rem;
+    gap: 1rem;
 
-    @media screen and (min-width: 762px) {
+    @media screen and (min-width: 726px) {
         padding-inline: 2rem;
         display: grid;
         grid-template-areas: 'filters characterList';
