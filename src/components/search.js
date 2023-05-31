@@ -5,12 +5,18 @@ const SearchStyled = styled.div`
 
 `
 
-function Search() {
+function Search({ setSearch }) {
+    function handleInputChange(event) {
+        // setPageNumber(1)
+        setSearch(event.target.value)
+        console.log(event.target.value)
+    }
+
     return (
         <SearchStyled>
             <div className="container-fluid">
                 <form className="d-flex" role="search">
-                    <input className="form-control me-2" type="search" placeholder="Search the character" aria-label="Search" />
+                    <input className="form-control me-2" type="search" placeholder="Search the character" aria-label="Search" onChange={handleInputChange}/>
                     <button className="btn btn-outline-light" type="submit">
                         <img src="/search.svg" alt="Search" width={20} height={20} />
                     </button>

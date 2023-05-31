@@ -26,7 +26,7 @@ const HeaderStyled = styled.header`
 
 `
 
-function Header() {
+function Header({ setSearch }) {
     return (
         <HeaderStyled>
             <Navbar bg="light" expand="md">
@@ -39,7 +39,7 @@ function Header() {
                     <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                         <Nav className="">
                             <Nav.Link href="#home">
-                                <Search />
+                                <Search setSearch={setSearch} />
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

@@ -20,6 +20,7 @@ function Character(props) {
                 <div className="card-body mt-4">
                     <h4 className="card-title">{props.Nombre}</h4>
                     <p>{props.Estado}</p>
+                    <p>{props.Genero}</p>
                 </div>
             </div>
         </CharacterStyled>

@@ -9,8 +9,11 @@ function App() {
 
   const [ fetchedData, updateFetchedData ] = useState([]);
   const { docs } = fetchedData;
+  const [search, setSearch] = useState('')
+  const [status, setStatus] = useState('')
+  const [gender, setGender] = useState('')
 
-  const api = `https://apisimpsons.fly.dev/api/personajes?limit=${20}`
+  const api = `https://apisimpsons.fly.dev/api/personajes?limit=200`
 
   useEffect(() => {
     (async function() {
@@ -23,10 +26,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header setSearch={setSearch} />
       <Layout>
-        <Filters />
-        <CharacterList docs={docs} />
+        <Filters setStatus={setStatus} setGender={setGender} />
+        <CharacterList docs={docs} status={status} gender={gender} search={search} />
       </Layout>
     </div>
   );
