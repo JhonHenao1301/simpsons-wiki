@@ -2,18 +2,21 @@
 import Header from './components/header';
 import Layout from './components/layout';
 import Filters from './components/filters';
+import Pagination from './components/pagination';
 import CharacterList from './components/character-list';
 import { useState, useEffect } from 'react';
 
 function App() {
 
   const [ fetchedData, updateFetchedData ] = useState([]);
-  const { docs } = fetchedData;
-  const [search, setSearch] = useState('')
-  const [status, setStatus] = useState('')
-  const [gender, setGender] = useState('')
+  const { docs, result, totalPages, totalDocs } = fetchedData;
+  const [ limit, setLimit ] = useState(12)
+  const [ search, setSearch ] = useState('')
+  const [ pageNumber, setPageNumber] = useState(1)
+  const [ status, setStatus ] = useState('')
+  const [ gender, setGender ] = useState('')
 
-  const api = `https://apisimpsons.fly.dev/api/personajes?limit=200`
+  const api = `https://apisimpsons.fly.dev/api/personajes?limit=${limit}&page=${pageNumber}/find/${search}`
 
   useEffect(() => {
     (async function() {
@@ -26,11 +29,12 @@ function App() {
 
   return (
     <div className="App">
-      <Header setSearch={setSearch} />
+      <Header setSearch={setSearch} setLimit={setLimit} totalDocs={totalDocs} />
       <Layout>
         <Filters setStatus={setStatus} setGender={setGender} />
-        <CharacterList docs={docs} status={status} gender={gender} search={search} />
+        <CharacterList docs={(result) ? result : docs} status={status} gender={gender} search={search} />
       </Layout>
+      <Pagination setPageNumber={setPageNumber} info={result} totalPages={totalPages} />
     </div>
   );
 }

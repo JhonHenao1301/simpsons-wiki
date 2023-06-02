@@ -5,11 +5,13 @@ const SearchStyled = styled.div`
 
 `
 
-function Search({ setSearch }) {
+function Search({ setSearch, setLimit, totalDocs }) {
     function handleInputChange(event) {
-        // setPageNumber(1)
-        setSearch(event.target.value)
-        console.log(event.target.value)
+        if(event.target.value) {
+            setLimit(totalDocs)
+            setSearch(event.target.value)
+        }
+            else { setLimit(12) }
     }
 
     return (

@@ -3,10 +3,9 @@ import styled from 'styled-components'
 import Character from './character'
 
 const CharacterListStyled = styled.div`
-    /* border: 1px solid red; */
     grid-area: characterList;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(7rem, 14rem));;
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 14rem));
     column-gap: 1rem;
     row-gap: 1.5rem;
 `
