@@ -1,19 +1,19 @@
 
 import styled from 'styled-components'
+import { useRef } from 'react'
 
 const CharacterStyled = styled.div`
     display: flex;
     border: 2px solid var(--primary);
     border-radius: .5rem;
-    block-size: 32rem;
+    block-size: auto;
     .card {
         inline-size: 100%;
         padding-block: 1rem;
     }
     .card-img-top {
-        text-align: center;
         inline-size: auto;
-        block-size: 20rem;
+        block-size: 24rem;
     }
     .card-body {
         flex: 1;
@@ -22,9 +22,11 @@ const CharacterStyled = styled.div`
 `
 
 function Character(props) {
+    const ref = useRef()
+    console.log(ref)
     return (
         <CharacterStyled>
-            <div className="card">
+            <div className="card" ref={ref}>
                 <img className="card-img-top" src={props.Imagen} alt=" footage card" />
                 <div className="card-body">
                     <h4 className="card-title">{props.Nombre}</h4>

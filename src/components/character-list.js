@@ -5,7 +5,7 @@ import Character from './character'
 const CharacterListStyled = styled.div`
     grid-area: characterList;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(7rem, 14rem));
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 18rem));
     column-gap: 1rem;
     row-gap: 1.5rem;
 `

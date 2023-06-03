@@ -9,7 +9,8 @@ function Search({ setSearch, setLimit, totalDocs }) {
     function handleInputChange(event) {
         if(event.target.value) {
             setLimit(totalDocs)
-            setSearch(event.target.value)
+            let text = event.target.value.toLowerCase()
+            setSearch(text)
         }
             else { setLimit(12) }
     }
