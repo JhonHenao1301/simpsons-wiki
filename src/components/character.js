@@ -1,6 +1,5 @@
 
 import styled from 'styled-components'
-import { useRef } from 'react'
 
 const CharacterStyled = styled.div`
     display: flex;
@@ -22,11 +21,9 @@ const CharacterStyled = styled.div`
 `
 
 function Character(props) {
-    const ref = useRef()
-    console.log(ref)
     return (
         <CharacterStyled>
-            <div className="card" ref={ref}>
+            <div className="card">
                 <img className="card-img-top" src={props.Imagen} alt=" footage card" />
                 <div className="card-body">
                     <h4 className="card-title">{props.Nombre}</h4>

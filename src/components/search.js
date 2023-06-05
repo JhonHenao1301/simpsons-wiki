@@ -2,17 +2,19 @@
 import styled from 'styled-components'
 
 const SearchStyled = styled.div`
-
 `
 
 function Search({ setSearch, setLimit, totalDocs }) {
     function handleInputChange(event) {
-        if(event.target.value) {
+        let search = event.target.value.toLowerCase()
+        if(search) {
             setLimit(totalDocs)
-            let text = event.target.value.toLowerCase()
-            setSearch(text)
+            setSearch(search)
         }
-            else { setLimit(12) }
+            else { 
+                setLimit(12)
+                setSearch('') 
+            }
     }
 
     return (

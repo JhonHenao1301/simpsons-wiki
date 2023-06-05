@@ -20,10 +20,8 @@ function App() {
 
   useEffect(() => {
     (async function() {
-      // setLoading(true)
       let data = await fetch(api).then((res) => res.json());
       updateFetchedData(data)
-      // setLoading(false)
     })();
   }, [api]);
 

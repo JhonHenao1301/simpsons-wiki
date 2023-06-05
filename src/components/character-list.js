@@ -5,7 +5,7 @@ import Character from './character'
 const CharacterListStyled = styled.div`
     grid-area: characterList;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(9rem, 18rem));
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 14rem));
     column-gap: 1rem;
     row-gap: 1.5rem;
 `
@@ -57,6 +57,7 @@ function CharacterList({ docs, status, gender, search }) {
                 list?.map((item) =>{
                     return <Character {...item} key={item._id} />
                 })
+                
             }
         </CharacterListStyled>
     )
